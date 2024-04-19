@@ -10,6 +10,6 @@ This is a simple sample program to create a PHP+MYSQL environment using docker.
 ### MYSQL
 - [x] ベース作成
 - [x] コンテナ起動時にDB作成
-- [ ] コンテナ起動時にテーブル作成
-- [ ] コンテナ起動時にデータ投入
+- [x] コンテナ起動時にテーブル作成
+- [x] コンテナ起動時にデータ投入
 - [ ] 設定ファイルの分離
