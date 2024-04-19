@@ -22,6 +22,8 @@ services:
       # MySQLのデータをローカルにコピーしている。
       # そうしないとコンテナを消してしまうとデータが吹き飛ぶため。
       - ./docker/mysql/data:/var/lib/mysql
+       # コンテナ作成時に実行されるsqlファイルを格納するパス
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
     ports:
       # コンテナポート - ホストポート
       - "3306:3306"
