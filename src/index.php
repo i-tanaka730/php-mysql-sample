@@ -9,13 +9,18 @@ $user = 'root';
 $password = 'pass';
 
 try {
-  $dbh = new PDO($dsn, $user, $password);
-  echo "接続成功\n";
+  $pdo = new PDO($dsn, $user, $password);
+  $slectSql = "select * from user where name = :name";
+  $stmt = $pdo->prepare($slectSql);
+  $name = "田中太郎";
+  $params = array(':name' => $name);
+  $stmt->execute($params);
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+  echo $result["name"] . "\n";
+  echo $result["age"] . "\n";
 } catch (PDOException $e) {
   echo "接続失敗: " . $e->getMessage() . "\n";
   exit();
 }
-
-echo 'test';
 
 ?>
